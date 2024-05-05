@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    Title="Профиль"
+    x:Class="Client.Views.ProfileView"
+    x:DataType="vm:ProfileVM"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:controls="clr-namespace:Client.Controls"
+    xmlns:converters="clr-namespace:Client.Converters"
+    xmlns:models="clr-namespace:Shared.Contracts.Responses.News;assembly=Shared"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:Client.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <converters:BaseAddressImageConverter x:Key="BaseAddressImageConverter" />
+        <converters:FirstNameToCharConverter x:Key="FirstNameToCharConverter" />
+    </ContentPage.Resources>
+    <Shell.TitleView>
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label
+                FontAttributes="Bold"
+                FontSize="28"
+                Text="News"
+                TextColor="{StaticResource Primary}" />
+            <Label
+                FontAttributes="Bold"
+                FontSize="28"
+                Text="Service" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingViewCommand}" EventName="Appearing" />
+        <toolkit:EventToCommandBehavior Command="{Binding DisappearingViewCommand}" EventName="Disappearing" />
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <RefreshView Command="{Binding RefreshDataCommand}" IsRefreshing="{Binding IsBusy}">
+            <ScrollView>
+
+                <VerticalStackLayout Padding="15" Spacing="30">
+
+                    <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+                        <Border
+                            BackgroundColor="{StaticResource Primary}"
+                            HeightRequest="90"
+                            StrokeShape="RoundRectangle 45"
+                            StrokeThickness="0"
+                            WidthRequest="90">
+                            <Grid>
+                                <Image Source="{Binding ProfilePictureUrl, Converter={StaticResource BaseAddressImageConverter}}" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="28"
+                                    HorizontalOptions="Center"
+                                    IsVisible="False"
+                                    Text="{Binding FirstName, Converter={StaticResource FirstNameToCharConverter}}"
+                                    TextColor="{StaticResource White}"
+                                    VerticalOptions="Center">
+                                    <Label.Triggers>
+                                        <DataTrigger
+                                            Binding="{Binding ProfilePictureUrl.Length}"
+                                            TargetType="Label"
+                                            Value="0">
+                                            <Setter Property="IsVisible" Value="True" />
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+                            </Grid>
+                        </Border>
+                        <VerticalStackLayout>
+
+                            <HorizontalStackLayout HorizontalOptions="Center" Spacing="4">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="{Binding LastName}" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="{Binding FirstName}" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="{Binding MiddleName}" />
+                            </HorizontalStackLayout>
+
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="18"
+                                HorizontalOptions="Center"
+                                Text="{Binding Email}"
+                                TextColor="{StaticResource Primary}" />
+
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Spacing="10">
+                        <controls:ProfileButton
+                            ClickCommand="{Binding GoToNewsListViewByViewsCommand}"
+                            Icon="views.svg"
+                            IconBackgroundColor="{StaticResource MidnightBlue}"
+                            Text="Просмотренные" />
+                        <controls:ProfileButton
+                            ClickCommand="{Binding GoToNewsListViewByLikesCommand}"
+                            Icon="like.svg"
+                            IconBackgroundColor="{StaticResource Magenta}"
+                            Text="Понравилось" />
+                        <controls:ProfileButton
+                            ClickCommand="{Binding GoToNewsListViewByBookMarksCommand}"
+                            Icon="bookmark.svg"
+                            IconBackgroundColor="{StaticResource Black}"
+                            Text="Закладки" />
+
+                    </VerticalStackLayout>
+                    <controls:ProfileButton
+                        ClickCommand="{Binding SignOutCommand}"
+                        Icon="exit.svg"
+                        IconBackgroundColor="{StaticResource Primary}"
+                        Text="Выйти" />
+                </VerticalStackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

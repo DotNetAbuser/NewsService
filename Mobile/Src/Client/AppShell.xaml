@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    Shell.FlyoutBehavior="Disabled"
+    Title="Client"
+    x:Class="Client.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:views="clr-namespace:Client.Views"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
+    </ContentPage.Behaviors>
+
+    <ShellContent ContentTemplate="{DataTemplate views:StartUpView}" Route="StartUpView" />
+    <ShellContent ContentTemplate="{DataTemplate views:SignInView}" Route="SignInView" />
+
+    <TabBar>
+        <Tab Icon="home.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:HomeView}" Route="HomeGuest" />
+        </Tab>
+        <Tab Icon="profile.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:ProfileView}" />
+        </Tab>
+    </TabBar>
+
+    <TabBar>
+        <Tab Icon="home.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:HomeView}" Route="HomeJournalist" />
+        </Tab>
+        <Tab Icon="news.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:MyPublishedNewsView}" />
+        </Tab>
+        <Tab Icon="profile.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:ProfileView}" />
+        </Tab>
+    </TabBar>
+
+    <TabBar>
+        <Tab Icon="home.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:HomeView}" Route="HomeAdmin" />
+        </Tab>
+        <Tab Icon="news.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:MyPublishedNewsView}" />
+        </Tab>
+        <Tab Icon="profile.svg">
+            <ShellContent ContentTemplate="{DataTemplate views:ProfileView}" />
+        </Tab>
+    </TabBar>
+
+
+
+</Shell>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentView
+    x:Class="Client.Controls.ProfileButton"
+    x:Name="This"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Border
+        HeightRequest="65"
+        Padding="15,10"
+        StrokeShape="RoundRectangle 10"
+        WidthRequest="330">
+        <Grid ColumnDefinitions="40, *, 40">
+            <Border
+                BackgroundColor="{Binding Source={x:Reference This}, Path=IconBackgroundColor}"
+                HeightRequest="40"
+                StrokeShape="RoundRectangle 20"
+                StrokeThickness="0">
+                <Image
+                    HeightRequest="25"
+                    Source="{Binding Source={x:Reference This}, Path=Icon}"
+                    WidthRequest="25">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource White}" />
+                    </Image.Behaviors>
+                </Image>
+            </Border>
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Grid.Column="1"
+                Padding="20,0"
+                Text="{Binding Source={x:Reference This}, Path=Text}"
+                VerticalOptions="Center" />
+            <Image Grid.Column="2" Source="right.svg">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Gray200}" />
+                </Image.Behaviors>
+            </Image>
+        </Grid>
+        <Border.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding Source={x:Reference This}, Path=ClickCommand}" />
+        </Border.GestureRecognizers>
+    </Border>
+
+</ContentView>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    Shell.NavBarIsVisible="False"
+    x:Class="Client.Views.SignInView"
+    x:DataType="vm:SignInVM"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:controls="clr-namespace:Client.Controls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:Client.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingViewCommand}" EventName="Appearing" />
+        <toolkit:EventToCommandBehavior Command="{Binding DisappearingViewCommand}" EventName="Disappearing" />
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+
+        <Grid RowDefinitions="40, *">
+            <ActivityIndicator IsRunning="True" IsVisible="{Binding IsBusy}" />
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout
+                    Padding="25,0"
+                    Spacing="40"
+                    VerticalOptions="Center">
+                    <VerticalStackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="32"
+                            Text="Добро пожаловать"
+                            TextColor="{StaticResource Primary}" />
+                        <Label
+                            FontSize="18"
+                            Text="Для продолжения. Введите ваш логин и пароль."
+                            TextColor="{StaticResource Gray300}" />
+                    </VerticalStackLayout>
+
+
+                    <VerticalStackLayout Spacing="15">
+                        <controls:BorderEntry Placeholder="Имя пользователя" Text="{Binding Username}" />
+                        <controls:BorderEntry
+                            ChangeIsPasswordVisibleCommand="{Binding ChangeIsPasswordCommand}"
+                            IsPassword="True"
+                            IsPasswordNotVisible="{Binding IsPasswordNotVisible}"
+                            Placeholder="Пароль"
+                            Text="{Binding Password}" />
+                    </VerticalStackLayout>
+
+                    <Button
+                        Command="{Binding SignInCommand}"
+                        CornerRadius="20"
+                        FontAttributes="Bold"
+                        FontSize="32"
+                        HeightRequest="70"
+                        Text="Войти" />
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="4">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="Ещё не с нами?" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="Зарегистрироваться"
+                            TextColor="{StaticResource Primary}"
+                            TextDecorations="Underline">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToSignUpViewCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+
+
+    </ContentPage.Content>
+</ContentPage>

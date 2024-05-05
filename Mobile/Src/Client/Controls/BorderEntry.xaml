@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Border
+    BackgroundColor="Transparent"
+    HeightRequest="75"
+    Stroke="{AppThemeBinding Light={StaticResource Black},
+                             Dark={StaticResource White}}"
+    StrokeShape="RoundRectangle 20"
+    StrokeThickness="1"
+    x:Class="Client.Controls.BorderEntry"
+    x:Name="This"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid
+        ColumnDefinitions="*, auto"
+        ColumnSpacing="10"
+        Padding="20,0">
+
+        <Entry
+            FontAttributes="Bold"
+            FontSize="18"
+            IsPassword="{Binding Source={x:Reference This}, Path=IsPasswordNotVisible}"
+            Placeholder="{Binding Source={x:Reference This}, Path=Placeholder}"
+            Text="{Binding Source={x:Reference This}, Path=Text}"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"
+            x:Name="TxtEntry" />
+
+        <Image
+            Grid.Column="1"
+            HeightRequest="40"
+            IsVisible="{Binding Source={x:Reference This}, Path=IsPassword}"
+            Source="not_visible.svg"
+            WidthRequest="40">
+            <Image.Triggers>
+                <DataTrigger
+                    Binding="{Binding Source={x:Reference This}, Path=IsPasswordNotVisible}"
+                    TargetType="Image"
+                    Value="false">
+                    <Setter Property="Source" Value="visible.svg" />
+                </DataTrigger>
+            </Image.Triggers>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Source={x:Reference This}, Path=ChangeIsPasswordVisibleCommand}" />
+            </Image.GestureRecognizers>
+            <Image.Behaviors>
+                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+            </Image.Behaviors>
+        </Image>
+
+    </Grid>
+    <Border.Triggers>
+        <DataTrigger
+            Binding="{Binding Source={x:Reference TxtEntry}, Path=IsFocused}"
+            TargetType="Border"
+            Value="True">
+            <Setter Property="StrokeThickness" Value="2" />
+            <Setter Property="Stroke" Value="{StaticResource Primary}" />
+        </DataTrigger>
+    </Border.Triggers>
+</Border>

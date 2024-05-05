@@ -1,0 +1,11 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Shared.Contracts.Requests.Identity;
+global using Shared.Contracts.Responses.Identity;
+global using Domain.Entities;
+global using Shared.Contracts;
+global using Shared.Contracts.Responses.News;
+global using Domain;
+global using Shared.Contracts.Requests;
+global using Shared.Contracts.Requests.News;
