@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "88Gwvz8z1oD/icn30WQdDmtInGYtVk2h9m2iyxOztXwiYPT31KEWZDXdy6hJMuAiGjRlP2ktSpM+CKnLLW3acA==",
+  "dgSpecHash": "AvEMvwKwo75GfEkvWXuiDasBncPV1NLV9iBQyjr4OqSJDURbPSV3kxsvX582+PTHwejRIu/GxK4CP/D59WRbbw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Backend\\Src\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Backend\\Src\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyao\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\ilyao\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.4\\microsoft.entityframeworkcore.8.0.4.nupkg.sha512",

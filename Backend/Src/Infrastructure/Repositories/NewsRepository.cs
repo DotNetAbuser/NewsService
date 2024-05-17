@@ -4,16 +4,25 @@ public class NewsRepository(
     ApplicationDbContext _dbContext) 
     : INewsRepository
 {
-    public async Task<PaginatedData<NewsEntity>> GetPaginatedNewsAsync(
-        int pageNumber, int pageSize,
-        string searchTerms, string sortColumn, string sortOrder)
+    public async Task<PaginatedData<NewsEntity>> GetPaginatedNewsNotPublishedAsync(int pageNumber, int pageSize, string? searchTerms, string? sortColumn,
+        string? sortOrder)
     {
-        var query = _dbContext.News
-            .AsNoTracking();
+        var getListQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => !x.IsPublished);
+        
+        var countQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => !x.IsPublished);
+        
         if (!string.IsNullOrWhiteSpace(searchTerms))
         {
             searchTerms = searchTerms.ToLower();
-            query = query.Where(u =>
+            getListQuery = getListQuery.Where(u =>
+                u.Title.ToLower().Contains(searchTerms) ||
+                u.Content.ToLower().Contains(searchTerms));
+            
+            countQuery = countQuery.Where(u =>
                 u.Title.ToLower().Contains(searchTerms) ||
                 u.Content.ToLower().Contains(searchTerms));
         }
@@ -26,11 +35,10 @@ public class NewsRepository(
             _ => news => news.Created
         };
         
-        query = sortOrder?.ToLower() == "desc" 
-            ? query.OrderBy(keySelector) 
-            : query.OrderByDescending(keySelector);
-        var list = await query
-            .AsNoTracking()
+        getListQuery = sortOrder?.ToLower() == "desc" 
+            ? getListQuery.OrderBy(keySelector) 
+            : getListQuery.OrderByDescending(keySelector);
+        var list = await getListQuery
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .Include(x => x.Category)
@@ -40,8 +48,58 @@ public class NewsRepository(
             .Include(x => x.BookMarks)
             .Include(x => x.Comments)
             .ToListAsync();
-        var totalCount = await _dbContext.News
+        var totalCount = await countQuery
+            .CountAsync();
+        return new PaginatedData<NewsEntity>(
+            List: list, TotalCount: totalCount);
+    }
+
+    public async Task<PaginatedData<NewsEntity>> GetPaginatedNewsAsync(
+        int pageNumber, int pageSize,
+        string searchTerms, string sortColumn, string sortOrder)
+    {
+        var getListQuery = _dbContext.News
             .AsNoTracking()
+            .Where(x => x.IsPublished);
+        
+        var countQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => x.IsPublished);
+        
+        if (!string.IsNullOrWhiteSpace(searchTerms))
+        {
+            searchTerms = searchTerms.ToLower();
+            getListQuery = getListQuery.Where(u =>
+                u.Title.ToLower().Contains(searchTerms) ||
+                u.Content.ToLower().Contains(searchTerms));
+            
+            countQuery = countQuery.Where(u =>
+                u.Title.ToLower().Contains(searchTerms) ||
+                u.Content.ToLower().Contains(searchTerms));
+        }
+        
+        Expression<Func<NewsEntity, object>> keySelector = sortColumn?.ToLower() switch
+        {
+            "views" => news => news.Views.Count,
+            "likes" => news => news.Likes.Count,
+            "comments" => news => news.Comments.Count,
+            _ => news => news.Created
+        };
+        
+        getListQuery = sortOrder?.ToLower() == "desc" 
+            ? getListQuery.OrderBy(keySelector) 
+            : getListQuery.OrderByDescending(keySelector);
+        var list = await getListQuery
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .Include(x => x.Category)
+            .Include(x => x.User)
+            .Include(x => x.Views)
+            .Include(x => x.Likes)
+            .Include(x => x.BookMarks)
+            .Include(x => x.Comments)
+            .ToListAsync();
+        var totalCount = await countQuery
             .CountAsync();
         return new PaginatedData<NewsEntity>(
             List: list, TotalCount: totalCount);
@@ -52,12 +110,24 @@ public class NewsRepository(
         int pageNumber, int pageSize,
         string? searchTerms, string? sortColumn, string? sortOrder)
     {
-        var query = _dbContext.News
-            .AsNoTracking();
+        var getListQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => x.CategoryId == categoryId)
+            .Where(x => x.IsPublished);
+        
+        var countQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => x.CategoryId == categoryId)
+            .Where(x => x.IsPublished);
+        
         if (!string.IsNullOrWhiteSpace(searchTerms))
         {
             searchTerms = searchTerms.ToLower();
-            query = query.Where(u =>
+            getListQuery = getListQuery.Where(u =>
+                u.Title.ToLower().Contains(searchTerms) ||
+                u.Content.ToLower().Contains(searchTerms));
+            
+            countQuery = countQuery.Where(u =>
                 u.Title.ToLower().Contains(searchTerms) ||
                 u.Content.ToLower().Contains(searchTerms));
         }
@@ -70,12 +140,10 @@ public class NewsRepository(
             _ => news => news.Created
         };
         
-        query = sortOrder?.ToLower() == "desc" 
-            ? query.OrderBy(keySelector) 
-            : query.OrderByDescending(keySelector);
-        var list = await query
-            .AsNoTracking()
-            .Where(x => x.CategoryId == categoryId)
+        getListQuery = sortOrder?.ToLower() == "desc" 
+            ? getListQuery.OrderBy(keySelector) 
+            : getListQuery.OrderByDescending(keySelector);
+        var list = await getListQuery
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .Include(x => x.Category)
@@ -85,9 +153,7 @@ public class NewsRepository(
             .Include(x => x.Likes)
             .Include(x => x.Comments)
             .ToListAsync();
-        var totalCount = await _dbContext.News
-            .AsNoTracking()
-            .Where(x => x.CategoryId == categoryId)
+        var totalCount = await countQuery
             .CountAsync();
         return new PaginatedData<NewsEntity>(
             List: list, TotalCount: totalCount);
@@ -98,12 +164,26 @@ public class NewsRepository(
         int pageNumber, int pageSize,
         string? searchTerms, string? sortColumn, string? sortOrder)
     {
-        var query = _dbContext.News
-            .AsNoTracking();
+        var getListQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => x.Views
+                .Any(view => view.UserId == userId))
+            .Where(x => x.IsPublished);
+
+        var countQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => x.Views
+                .Any(view => view.UserId == userId))
+            .Where(x => x.IsPublished);
+
         if (!string.IsNullOrWhiteSpace(searchTerms))
         {
             searchTerms = searchTerms.ToLower();
-            query = query.Where(u =>
+            getListQuery = getListQuery.Where(u =>
+                u.Title.ToLower().Contains(searchTerms) ||
+                u.Content.ToLower().Contains(searchTerms));
+            
+            countQuery = countQuery.Where(u =>
                 u.Title.ToLower().Contains(searchTerms) ||
                 u.Content.ToLower().Contains(searchTerms));
         }
@@ -116,13 +196,10 @@ public class NewsRepository(
             _ => news => news.Created
         };
         
-        query = sortOrder?.ToLower() == "desc" 
-            ? query.OrderBy(keySelector) 
-            : query.OrderByDescending(keySelector);
-        var list = await query
-            .AsNoTracking()
-            .Where(x => x.Views
-                .Any(view => view.UserId == userId))
+        getListQuery = sortOrder?.ToLower() == "desc" 
+            ? getListQuery.OrderBy(keySelector) 
+            : getListQuery.OrderByDescending(keySelector);
+        var list = await getListQuery
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .Include(x => x.Category)
@@ -132,8 +209,7 @@ public class NewsRepository(
             .Include(x => x.Likes)
             .Include(x => x.Comments)
             .ToListAsync();
-        var totalCount = await _dbContext.News
-            .AsNoTracking()
+        var totalCount = await countQuery
             .CountAsync();
         return new PaginatedData<NewsEntity>(
             List: list, TotalCount: totalCount);
@@ -144,12 +220,26 @@ public class NewsRepository(
         int pageNumber, int pageSize, 
         string? searchTerms, string? sortColumn, string? sortOrder)
     {
-        var query = _dbContext.News
-            .AsNoTracking();
+        var getListQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => x.Likes
+                .Any(like => like.UserId == userId))
+            .Where(x => x.IsPublished);
+
+        var countQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => x.Likes
+                .Any(like => like.UserId == userId))
+            .Where(x => x.IsPublished);
+        
         if (!string.IsNullOrWhiteSpace(searchTerms))
         {
             searchTerms = searchTerms.ToLower();
-            query = query.Where(u =>
+            getListQuery = getListQuery.Where(u =>
+                u.Title.ToLower().Contains(searchTerms) ||
+                u.Content.ToLower().Contains(searchTerms));
+            
+            countQuery = countQuery.Where(u =>
                 u.Title.ToLower().Contains(searchTerms) ||
                 u.Content.ToLower().Contains(searchTerms));
         }
@@ -162,13 +252,10 @@ public class NewsRepository(
             _ => news => news.Created
         };
         
-        query = sortOrder?.ToLower() == "desc" 
-            ? query.OrderBy(keySelector) 
-            : query.OrderByDescending(keySelector);
-        var list = await query
-            .AsNoTracking()
-            .Where(x => x.Likes
-                .Any(like => like.UserId == userId))
+        getListQuery = sortOrder?.ToLower() == "desc" 
+            ? getListQuery.OrderBy(keySelector) 
+            : getListQuery.OrderByDescending(keySelector);
+        var list = await getListQuery
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .Include(x => x.Category)
@@ -178,10 +265,7 @@ public class NewsRepository(
             .Include(x => x.Likes)
             .Include(x => x.Comments)
             .ToListAsync();
-        var totalCount = await _dbContext.News
-            .AsNoTracking()
-            .Where(x => x.Likes
-                .Any(like => like.UserId == userId))
+        var totalCount = await countQuery
             .CountAsync();
         return new PaginatedData<NewsEntity>(
             List: list, TotalCount: totalCount);
@@ -192,12 +276,26 @@ public class NewsRepository(
         int pageNumber, int pageSize, 
         string? searchTerms, string? sortColumn, string? sortOrder)
     {
-        var query = _dbContext.News
-            .AsNoTracking();
+        var getListQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => x.BookMarks
+                .Any(bookmark => bookmark.UserId == userId))
+            .Where(x => x.IsPublished);
+
+        var countQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => x.BookMarks
+                .Any(bookmark => bookmark.UserId == userId))
+            .Where(x => x.IsPublished);
+
         if (!string.IsNullOrWhiteSpace(searchTerms))
         {
             searchTerms = searchTerms.ToLower();
-            query = query.Where(u =>
+            getListQuery = getListQuery.Where(u =>
+                u.Title.ToLower().Contains(searchTerms) ||
+                u.Content.ToLower().Contains(searchTerms));
+            
+            countQuery = countQuery.Where(u =>
                 u.Title.ToLower().Contains(searchTerms) ||
                 u.Content.ToLower().Contains(searchTerms));
         }
@@ -210,13 +308,10 @@ public class NewsRepository(
             _ => news => news.Created
         };
         
-        query = sortOrder?.ToLower() == "desc" 
-            ? query.OrderBy(keySelector) 
-            : query.OrderByDescending(keySelector);
-        var list = await query
-            .AsNoTracking()
-            .Where(x => x.BookMarks
-                .Any(bookmark => bookmark.UserId == userId))
+        getListQuery = sortOrder?.ToLower() == "desc" 
+            ? getListQuery.OrderBy(keySelector) 
+            : getListQuery.OrderByDescending(keySelector);
+        var list = await getListQuery
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .Include(x => x.Category)
@@ -226,10 +321,7 @@ public class NewsRepository(
             .Include(x => x.Likes)
             .Include(x => x.Comments)
             .ToListAsync();
-        var totalCount = await _dbContext.News
-            .AsNoTracking()
-            .Where(x => x.BookMarks
-                .Any(bookmark => bookmark.UserId == userId))
+        var totalCount = await countQuery
             .CountAsync();
         return new PaginatedData<NewsEntity>(
             List: list, TotalCount: totalCount);
@@ -239,11 +331,21 @@ public class NewsRepository(
         Guid userId, int pageNumber, int pageSize, string? searchTerms, string? sortColumn, string? sortOrder)
     {
         var query = _dbContext.News
-            .AsNoTracking();
+            .AsNoTracking()
+            .Where(x => x.UserId == userId)
+            .Where(x => x.IsPublished);
+        var countQuery = _dbContext.News
+            .AsNoTracking()
+            .Where(x => x.UserId == userId)
+            .Where(x => x.IsPublished);
         if (!string.IsNullOrWhiteSpace(searchTerms))
         {
             searchTerms = searchTerms.ToLower();
             query = query.Where(u =>
+                u.Title.ToLower().Contains(searchTerms) ||
+                u.Content.ToLower().Contains(searchTerms));
+            
+            countQuery = countQuery.Where(u =>
                 u.Title.ToLower().Contains(searchTerms) ||
                 u.Content.ToLower().Contains(searchTerms));
         }
@@ -260,8 +362,6 @@ public class NewsRepository(
             ? query.OrderBy(keySelector) 
             : query.OrderByDescending(keySelector);
         var list = await query
-            .AsNoTracking()
-            .Where(x => x.UserId == userId)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .Include(x => x.Category)
@@ -271,9 +371,7 @@ public class NewsRepository(
             .Include(x => x.Likes)
             .Include(x => x.Comments)
             .ToListAsync();
-        var totalCount = await _dbContext.News
-            .AsNoTracking()
-            .Where(x => x.UserId == userId)
+        var totalCount = await countQuery
             .CountAsync();
         return new PaginatedData<NewsEntity>(
             List: list, TotalCount: totalCount);

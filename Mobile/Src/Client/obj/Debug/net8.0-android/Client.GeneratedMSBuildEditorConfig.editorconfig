@@ -12,113 +12,119 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Client
-build_property.ProjectDir = C:\Users\ilyao\Desktop\Projects\NewsService1\Mobile\Src\Client\
+build_property.ProjectDir = C:\Users\ilyao\Desktop\Projects\NewsService\Mobile\Src\Client\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/App.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/AppShell.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Controls/BorderEditor.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Controls/BorderEditor.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Controls.BorderEditor.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\BorderEditor.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\BorderEditor.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Controls/BorderEntry.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Controls/BorderEntry.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Controls.BorderEntry.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\BorderEntry.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\BorderEntry.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Controls/BorderPicker.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Controls/BorderPicker.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Controls.BorderPicker.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\BorderPicker.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\BorderPicker.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Controls/BorderSearchBar.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Controls/BorderSearchBar.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Controls.BorderSearchBar.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\BorderSearchBar.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\BorderSearchBar.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Controls/ProfileButton.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Controls/ProfileButton.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Controls.ProfileButton.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\ProfileButton.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\ProfileButton.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Resources/Styles/Colors.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Resources/Styles/Styles.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Views/HomeView.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Views/HomeView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.HomeView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\HomeView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\HomeView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Views/MyPublishedNewsView.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Views/ModerateNewsView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.ModerateNewsView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ModerateNewsView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ModerateNewsView.xaml
+
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Views/MyPublishedNewsView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.MyPublishedNewsView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MyPublishedNewsView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MyPublishedNewsView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Views/NewsDetailsView.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Views/NewsDetailsView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.NewsDetailsView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\NewsDetailsView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\NewsDetailsView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Views/NewsListView.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Views/NewsListView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.NewsListView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\NewsListView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\NewsListView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Views/ProfileView.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Views/ProfileView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.ProfileView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ProfileView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ProfileView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Views/PublishNewsView.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Views/PublishNewsView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.PublishNewsView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\PublishNewsView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\PublishNewsView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Views/SignInView.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Views/SignInView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.SignInView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SignInView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SignInView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Views/SignUpView.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Views/SignUpView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.SignUpView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SignUpView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SignUpView.xaml
 
-[C:/Users/ilyao/Desktop/Projects/NewsService1/Mobile/Src/Client/Views/StartUpView.xaml]
+[C:/Users/ilyao/Desktop/Projects/NewsService/Mobile/Src/Client/Views/StartUpView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Client.Views.StartUpView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\StartUpView.xaml

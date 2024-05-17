@@ -87,21 +87,21 @@ namespace Domain.Migrations
                         new
                         {
                             ID = 1,
-                            Created = new DateTime(2024, 5, 5, 16, 42, 45, 386, DateTimeKind.Utc).AddTicks(9560),
+                            Created = new DateTime(2024, 5, 17, 12, 11, 0, 439, DateTimeKind.Utc).AddTicks(7793),
                             Description = "Новости о политической жизни страны",
                             Name = "Политика"
                         },
                         new
                         {
                             ID = 2,
-                            Created = new DateTime(2024, 5, 5, 16, 42, 45, 386, DateTimeKind.Utc).AddTicks(9571),
+                            Created = new DateTime(2024, 5, 17, 12, 11, 0, 439, DateTimeKind.Utc).AddTicks(7799),
                             Description = "Новости о спорте",
                             Name = "Спорт"
                         },
                         new
                         {
                             ID = 3,
-                            Created = new DateTime(2024, 5, 5, 16, 42, 45, 386, DateTimeKind.Utc).AddTicks(9573),
+                            Created = new DateTime(2024, 5, 17, 12, 11, 0, 439, DateTimeKind.Utc).AddTicks(7801),
                             Description = "Новости о здоровье и развитие медицины",
                             Name = "Здоровье и медицина"
                         });
@@ -189,6 +189,9 @@ namespace Domain.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("IsPublished")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("text");
@@ -240,19 +243,25 @@ namespace Domain.Migrations
                         new
                         {
                             ID = 1,
-                            Created = new DateTime(2024, 5, 5, 16, 42, 44, 929, DateTimeKind.Utc).AddTicks(7773),
+                            Created = new DateTime(2024, 5, 17, 12, 10, 59, 810, DateTimeKind.Utc).AddTicks(9587),
                             Name = "Admin"
                         },
                         new
                         {
                             ID = 2,
-                            Created = new DateTime(2024, 5, 5, 16, 42, 44, 929, DateTimeKind.Utc).AddTicks(7785),
-                            Name = "Journalist"
+                            Created = new DateTime(2024, 5, 17, 12, 10, 59, 810, DateTimeKind.Utc).AddTicks(9597),
+                            Name = "Redactor"
                         },
                         new
                         {
                             ID = 3,
-                            Created = new DateTime(2024, 5, 5, 16, 42, 44, 929, DateTimeKind.Utc).AddTicks(7788),
+                            Created = new DateTime(2024, 5, 17, 12, 10, 59, 810, DateTimeKind.Utc).AddTicks(9600),
+                            Name = "Journalist"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Created = new DateTime(2024, 5, 17, 12, 10, 59, 810, DateTimeKind.Utc).AddTicks(9602),
                             Name = "Guest"
                         });
                 });
@@ -355,14 +364,14 @@ namespace Domain.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("82925a8a-97a3-4ecb-8e4a-f7470f430b3a"),
-                            Created = new DateTime(2024, 5, 5, 16, 42, 45, 84, DateTimeKind.Utc).AddTicks(4325),
+                            ID = new Guid("e2677e8a-99b7-408b-bb61-6415f350b315"),
+                            Created = new DateTime(2024, 5, 17, 12, 10, 59, 961, DateTimeKind.Utc).AddTicks(4698),
                             Email = "admin@example.com",
                             FirstName = "Артур",
                             IsActive = true,
                             LastName = "Фатхудинов",
                             MiddleName = "Рустамович",
-                            PasswordHash = "$2a$11$vyWwWkvxC/bQM6w3u7x4newC3sqWq2IMieUnEXfV6w.z2X9l2g5Na",
+                            PasswordHash = "$2a$11$8scGYMnMV76MkotP46ug7.ldEkze2C235N7UNOlI8E/30nWOkO3ZG",
                             Phone = "+79177793607",
                             ProfilePictureUrl = "",
                             RoleId = 1,
@@ -370,32 +379,47 @@ namespace Domain.Migrations
                         },
                         new
                         {
-                            ID = new Guid("3a359e5a-f680-43a8-ae45-66434b6a7c9d"),
-                            Created = new DateTime(2024, 5, 5, 16, 42, 45, 235, DateTimeKind.Utc).AddTicks(827),
+                            ID = new Guid("417c0432-2a58-4740-8d19-d602784395ff"),
+                            Created = new DateTime(2024, 5, 17, 12, 11, 0, 113, DateTimeKind.Utc).AddTicks(7556),
+                            Email = "redactor@example.com",
+                            FirstName = "Артур",
+                            IsActive = true,
+                            LastName = "Фатхудинов",
+                            MiddleName = "Рустамович",
+                            PasswordHash = "$2a$11$w51KOyWMHPTGt6VebjIWWOtaziqohXsqqn7MZopV3.hyxkiOMO/a2",
+                            Phone = "+79177793601",
+                            ProfilePictureUrl = "",
+                            RoleId = 2,
+                            Username = "artur_redactor"
+                        },
+                        new
+                        {
+                            ID = new Guid("8494f891-d495-4d7a-b6a1-17f36c26f944"),
+                            Created = new DateTime(2024, 5, 17, 12, 11, 0, 262, DateTimeKind.Utc).AddTicks(8376),
                             Email = "journalist@example.com",
                             FirstName = "Артур",
                             IsActive = true,
                             LastName = "Фатхудинов",
                             MiddleName = "Рустамович",
-                            PasswordHash = "$2a$11$SF1s.DXelr.x7zCMDy9JxOTL.sQrrfCRhD3wCIs8RJBCograQfI..",
+                            PasswordHash = "$2a$11$sK9b.0nufcd19ShjvBnmU.caNMD8OdlM7LaXDcH0eAwKb2p66PRQy",
                             Phone = "+79177793608",
                             ProfilePictureUrl = "",
-                            RoleId = 2,
+                            RoleId = 3,
                             Username = "artur_journalist"
                         },
                         new
                         {
-                            ID = new Guid("bd76f840-47df-4ec3-a695-d07a10325623"),
-                            Created = new DateTime(2024, 5, 5, 16, 42, 45, 385, DateTimeKind.Utc).AddTicks(4905),
+                            ID = new Guid("d5398a41-f1b3-4b4b-957f-43d299ed75c3"),
+                            Created = new DateTime(2024, 5, 17, 12, 11, 0, 438, DateTimeKind.Utc).AddTicks(4352),
                             Email = "guest@example.com",
                             FirstName = "Артур",
                             IsActive = true,
                             LastName = "Фатхудинов",
                             MiddleName = "Рустамович",
-                            PasswordHash = "$2a$11$5O2WnKBgaFGTHKRSPQj23eILKjfCN2y/laO5X7wKCfpLal4Fzv0vO",
+                            PasswordHash = "$2a$11$CqFcjydDeMx12JGuRUTiQeiDLM2/zZP/sQR3cp2tpTcQPC2gsxLI.",
                             Phone = "+79177793609",
                             ProfilePictureUrl = "",
-                            RoleId = 3,
+                            RoleId = 4,
                             Username = "artur_guest"
                         });
                 });

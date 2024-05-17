@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client\\Client.csproj": {}
+    "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
+    "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
         "projectName": "Client.Infrastructure",
-        "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\ilyao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -36,32 +36,32 @@
           "net8.0-android34.0": {
             "targetAlias": "net8.0-android",
             "projectReferences": {
-              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj": {
-                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj"
+              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj": {
+                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj"
               }
             }
           },
           "net8.0-ios17.2": {
             "targetAlias": "net8.0-ios",
             "projectReferences": {
-              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj": {
-                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj"
+              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj": {
+                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj"
               }
             }
           },
           "net8.0-maccatalyst17.2": {
             "targetAlias": "net8.0-maccatalyst",
             "projectReferences": {
-              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj": {
-                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj"
+              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj": {
+                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj"
               }
             }
           },
           "net8.0-windows10.0.19041": {
             "targetAlias": "net8.0-windows10.0.19041.0",
             "projectReferences": {
-              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj": {
-                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj"
+              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj": {
+                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj"
               }
             }
           }
@@ -258,14 +258,14 @@
         }
       }
     },
-    "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client\\Client.csproj": {
+    "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client\\Client.csproj",
+        "projectUniqueName": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client\\Client.csproj",
+        "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\ilyao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client\\obj\\",
+        "outputPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -287,11 +287,11 @@
           "net8.0-android34.0": {
             "targetAlias": "net8.0-android",
             "projectReferences": {
-              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj"
+              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj"
               },
-              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj": {
-                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj"
+              "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj": {
+                "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj"
               }
             }
           }
@@ -370,14 +370,14 @@
         }
       }
     },
-    "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj": {
+    "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj",
+        "projectPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj",
         "packagesPath": "C:\\Users\\ilyao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\obj\\",
+        "outputPath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1gpgQ3wwOzf10eTtU9FNJJl9r909Qyr6uB9og9Lam05m4vtCiQWEstJrZCOzHlluERfA9rVtkUGHTFTUN2NWpQ==",
+  "dgSpecHash": "Ja/SGTD/8TfBPjWyh2NRfvAPCQibsbqysG6RswPuJ2cw5EJ/wCV7iM/+upxGdM/eIrqiVg+J+NKyMHv/mQm1uA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client\\Client.csproj",
+  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyao\\.nuget\\packages\\communitytoolkit.maui\\8.0.1\\communitytoolkit.maui.8.0.1.nupkg.sha512",
     "C:\\Users\\ilyao\\.nuget\\packages\\communitytoolkit.maui.core\\8.0.1\\communitytoolkit.maui.core.8.0.1.nupkg.sha512",

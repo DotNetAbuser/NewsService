@@ -47,6 +47,9 @@ public partial class SignInVM(
                 case "Journalist":
                     await _navigationService.NavigateToAsync($"//HomeJournalist");
                     break;
+                case "Redactor":
+                    await _navigationService.NavigateToAsync($"//HomeRedactor");
+                    break;
                 case "Admin":
                     await _navigationService.NavigateToAsync($"//HomeAdmin");
                     break;

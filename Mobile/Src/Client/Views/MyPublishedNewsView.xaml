@@ -42,97 +42,108 @@
         <converters:BaseAddressImageConverter x:Key="BaseAddressImageConverter" />
         <converters:DateToLocalTimeConverter x:Key="DateToLocalTimeConverter" />
         <DataTemplate x:DataType="models:NewsResponse" x:Key="NewsCardTemplate">
-            <Grid
-                Margin="0,10"
-                RowDefinitions="200, 55, 80, 25,1"
-                RowSpacing="5">
-                <Border
-                    BackgroundColor="{StaticResource Gray200}"
-                    Stroke="{StaticResource Gray200}"
-                    StrokeShape="RoundRectangle 10"
-                    StrokeThickness="0">
-                    <Grid>
-                        <Image Aspect="AspectFill" Source="{Binding ImageTitleUrl, Converter={StaticResource BaseAddressImageConverter}}" />
-                        <Label
-                            FontAttributes="Bold"
-                            FontSize="20"
-                            HorizontalOptions="Center"
-                            IsVisible="False"
-                            Text="Нет картинки"
-                            TextColor="{StaticResource White}"
-                            VerticalOptions="Center">
-                            <Label.Triggers>
-                                <DataTrigger
-                                    Binding="{Binding ImageTitleUrl}"
-                                    TargetType="Label"
-                                    Value="">
-                                    <Setter Property="IsVisible" Value="True" />
-                                </DataTrigger>
-                            </Label.Triggers>
-                        </Label>
+            <SwipeView Threshold="150">
+                <SwipeView.RightItems>
+                    <SwipeItems>
+                        <SwipeItem
+                            BackgroundColor="Red"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MyPublishedNewsVM}}, Path=DeleteNewsCommand}"
+                            CommandParameter="{Binding ID}"
+                            IconImageSource="delete.svg" />
+                    </SwipeItems>
+                </SwipeView.RightItems>
+                <Grid
+                    Margin="0,10"
+                    RowDefinitions="200, 55, 80, 25,1"
+                    RowSpacing="5">
+                    <Border
+                        BackgroundColor="{StaticResource Gray200}"
+                        Stroke="{StaticResource Gray200}"
+                        StrokeShape="RoundRectangle 10"
+                        StrokeThickness="0">
+                        <Grid>
+                            <Image Aspect="AspectFill" Source="{Binding ImageTitleUrl, Converter={StaticResource BaseAddressImageConverter}}" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                HorizontalOptions="Center"
+                                IsVisible="False"
+                                Text="Нет картинки"
+                                TextColor="{StaticResource White}"
+                                VerticalOptions="Center">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding ImageTitleUrl}"
+                                        TargetType="Label"
+                                        Value="">
+                                        <Setter Property="IsVisible" Value="True" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </Grid>
+                    </Border>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Grid.Row="1"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="2"
+                        Text="{Binding Title}" />
+                    <Label
+                        FontSize="14"
+                        Grid.Row="2"
+                        LineBreakMode="TailTruncation"
+                        MaxLines="4"
+                        Text="{Binding Content}" />
+                    <Grid ColumnDefinitions="*, 50, 50" Grid.Row="3">
+                        <Label Text="{Binding Created, Converter={StaticResource DateToLocalTimeConverter}}" VerticalOptions="Center" />
+
+                        <HorizontalStackLayout Grid.Column="1">
+                            <Image Source="like.svg">
+                                <Image.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding IsLiked}"
+                                        TargetType="Image"
+                                        Value="True">
+                                        <Setter Property="Source" Value="like_filled.svg" />
+                                    </DataTrigger>
+                                </Image.Triggers>
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Black}" />
+                                </Image.Behaviors>
+                            </Image>
+                            <Label
+                                Text="{Binding LikesCount}"
+                                TextColor="{StaticResource Black}"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Column="2">
+                            <Image Source="views.svg">
+                                <Image.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding IsViewed}"
+                                        TargetType="Image"
+                                        Value="True">
+                                        <Setter Property="Source" Value="views_filled.svg" />
+                                    </DataTrigger>
+                                </Image.Triggers>
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource Black}" />
+                                </Image.Behaviors>
+                            </Image>
+                            <Label
+                                Text="{Binding ViewsCount}"
+                                TextColor="{StaticResource Black}"
+                                VerticalOptions="Center" />
+                        </HorizontalStackLayout>
                     </Grid>
-                </Border>
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="20"
-                    Grid.Row="1"
-                    LineBreakMode="TailTruncation"
-                    MaxLines="2"
-                    Text="{Binding Title}" />
-                <Label
-                    FontSize="14"
-                    Grid.Row="2"
-                    LineBreakMode="TailTruncation"
-                    MaxLines="4"
-                    Text="{Binding Content}" />
-                <Grid ColumnDefinitions="*, 50, 50" Grid.Row="3">
-                    <Label Text="{Binding Created, Converter={StaticResource DateToLocalTimeConverter}}" VerticalOptions="Center" />
 
-                    <HorizontalStackLayout Grid.Column="1">
-                        <Image Source="like.svg">
-                            <Image.Triggers>
-                                <DataTrigger
-                                    Binding="{Binding IsLiked}"
-                                    TargetType="Image"
-                                    Value="True">
-                                    <Setter Property="Source" Value="like_filled.svg" />
-                                </DataTrigger>
-                            </Image.Triggers>
-                            <Image.Behaviors>
-                                <toolkit:IconTintColorBehavior TintColor="{StaticResource Black}" />
-                            </Image.Behaviors>
-                        </Image>
-                        <Label
-                            Text="{Binding LikesCount}"
-                            TextColor="{StaticResource Black}"
-                            VerticalOptions="Center" />
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout Grid.Column="2">
-                        <Image Source="views.svg">
-                            <Image.Triggers>
-                                <DataTrigger
-                                    Binding="{Binding IsViewed}"
-                                    TargetType="Image"
-                                    Value="True">
-                                    <Setter Property="Source" Value="views_filled.svg" />
-                                </DataTrigger>
-                            </Image.Triggers>
-                            <Image.Behaviors>
-                                <toolkit:IconTintColorBehavior TintColor="{StaticResource Black}" />
-                            </Image.Behaviors>
-                        </Image>
-                        <Label
-                            Text="{Binding ViewsCount}"
-                            TextColor="{StaticResource Black}"
-                            VerticalOptions="Center" />
-                    </HorizontalStackLayout>
+                    <Border BackgroundColor="{StaticResource Black}" Grid.Row="4" />
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MyPublishedNewsVM}}, Path=GoToNewsDetailsViewCommand}" CommandParameter="{Binding ID}" />
+                    </Grid.GestureRecognizers>
                 </Grid>
-
-                <Border BackgroundColor="{StaticResource Black}" Grid.Row="4" />
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MyPublishedNewsVM}}, Path=GoToNewsDetailsViewCommand}" CommandParameter="{Binding ID}" />
-                </Grid.GestureRecognizers>
-            </Grid>
+            </SwipeView>
         </DataTemplate>
     </ContentPage.Resources>
 

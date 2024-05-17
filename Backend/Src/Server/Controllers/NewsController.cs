@@ -8,6 +8,18 @@ public class NewsController(
     INewsService _newsService)
     : ControllerBase
 {
+
+    [HttpGet("not-published")]
+    [Authorize(Roles = "Admin, Redactor")]
+    public async Task<IActionResult> GetPaginatedNewsNotPublishedAsync(
+        int pageNumber, int pageSize,
+        string? searchTerms, string? sortColumn, string? sortOrder)
+    {
+        var response = await _newsService.GetPaginatedNewsNotPublishedAsync(
+            pageNumber, pageSize, searchTerms, sortColumn, sortOrder);
+        return Ok(response);
+    }
+    
     [HttpGet]
     [Authorize]
     public async Task<IActionResult> GetPaginatedNewsAsync(
@@ -119,5 +131,12 @@ public class NewsController(
     public async Task<IActionResult> DeleteAsync(string newsId)
     {
         return Ok(await _newsService.DeleteAsync(newsId));
+    }
+
+    [HttpPut("{newsId}/accept-or-decline")]
+    [Authorize(Roles = "Admin, Redactor")]
+    public async Task<IActionResult> AcceptOrDeclineNewsAsync(string newsId, AcceptOrDeclineNewsRequest request)
+    {
+        return Ok(await _newsService.AcceptOrDeclineNewsRequestAsync(newsId, request));
     }
 }

@@ -28,5 +28,7 @@ public partial class AppShell : Shell
             typeof(PublishNewsView));
         Routing.RegisterRoute(nameof(MyPublishedNewsView),
             typeof(MyPublishedNewsView));
+        Routing.RegisterRoute(nameof(ModerateNewsView),
+            typeof(ModerateNewsView));
     }
 }

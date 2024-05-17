@@ -1,7 +1,9 @@
 ﻿obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\bookmark.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\bookmark_filled.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\category.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\check_news.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\date.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\exit.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\home.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\like.png
@@ -20,7 +22,9 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\visible.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\bookmark.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\bookmark_filled.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\category.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\check_news.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\date.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\exit.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\home.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\like.png
@@ -39,7 +43,9 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\visible.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\bookmark.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\bookmark_filled.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\category.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\check_news.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\date.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\exit.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\home.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\like.png
@@ -58,7 +64,9 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\visible.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\bookmark.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\bookmark_filled.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\category.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\check_news.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\date.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\exit.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\home.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\like.png
@@ -77,7 +85,9 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\visible.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\bookmark.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\bookmark_filled.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\category.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\check_news.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\date.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\exit.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\home.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\like.png

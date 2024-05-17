@@ -9,3 +9,4 @@ global using Shared.Contracts.Responses.News;
 global using Domain;
 global using Shared.Contracts.Requests;
 global using Shared.Contracts.Requests.News;
+global using Shared;

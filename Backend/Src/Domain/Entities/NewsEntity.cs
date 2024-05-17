@@ -9,6 +9,7 @@ public class NewsEntity
     public string ImageTitleUrl { get; set; } = string.Empty;
     public string Title { get; set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
+    public bool IsPublished { get; set; }
     
     public UserEntity User { get; set; } = null!;
     public CategoryEntity Category  { get; set; } = null!;

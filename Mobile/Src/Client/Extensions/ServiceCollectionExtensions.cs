@@ -13,7 +13,8 @@ internal static class ServiceCollectionExtensions
             .AddTransient<NewsDetailsVM>()
             .AddTransient<NewsListVM>()
             .AddTransient<PublishNewsVM>()
-            .AddTransient<MyPublishedNewsVM>();
+            .AddTransient<MyPublishedNewsVM>()
+            .AddTransient<ModerateNewsVM>();
     }
     
     internal static void AddViews(this IServiceCollection services)
@@ -27,7 +28,8 @@ internal static class ServiceCollectionExtensions
             .AddTransient<NewsDetailsView>()
             .AddTransient<NewsListView>()
             .AddTransient<PublishNewsView>()
-            .AddTransient<MyPublishedNewsView>();
+            .AddTransient<MyPublishedNewsView>()
+            .AddTransient<ModerateNewsView>();
     }
     
     internal static void AddHttpClientFactory(this IServiceCollection services)

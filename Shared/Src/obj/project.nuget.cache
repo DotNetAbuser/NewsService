@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kQopjPJpZ5lrhoR8ZmiXyIL/iYXKfcq5dDSGQnScQiStdebZiCUwoYCIuI4PHL3RWOTkt49kHfgJIfXS8wKapw==",
+  "dgSpecHash": "wTigHgT+i6TNqEPMRwVSps5K1Kh+pRYxWjT4sHpEY1namwFKgsDGUn5Jf6njAa0sygEjFS2r3aT6Pjf4AuVQyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Shared\\Src\\Shared.csproj",
+  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Shared\\Src\\Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

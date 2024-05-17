@@ -2,6 +2,6 @@
 
 public record CreateNewsRequest(
     [Required] int CategoryId,
-    [Required] UploadRequest? ImageTitleUploadRequest,
+    UploadRequest? ImageTitleUploadRequest,
     [Required] string Title,
     [Required] string Content);

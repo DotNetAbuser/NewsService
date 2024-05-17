@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aLSS6nanDpY2Eo3gxbfkw6iq5mioyMJ5Yt7OeoyOLb9U+ErkgsU6lD1Qx+iZUGJZWgSsEJ5ES3U/giFGrlydqQ==",
+  "dgSpecHash": "6+lvl6/mjgS8fCgojKoQiVx4OftHFAEUKJP3fVXUapjSLwjY7oOJFLQcSqmYUIW4gj1ymh2CwNXf4tcxS/7FbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Backend\\Src\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Backend\\Src\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyao\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\ilyao\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.4\\microsoft.entityframeworkcore.8.0.4.nupkg.sha512",
@@ -21,5 +21,16 @@
     "C:\\Users\\ilyao\\.nuget\\packages\\npgsql\\8.0.2\\npgsql.8.0.2.nupkg.sha512",
     "C:\\Users\\ilyao\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.2\\npgsql.entityframeworkcore.postgresql.8.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Npgsql' 8.0.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-x9vc-6hfv-hg8c",
+      "libraryId": "Npgsql",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

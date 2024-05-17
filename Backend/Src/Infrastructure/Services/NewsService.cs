@@ -11,6 +11,35 @@ public class NewsService(
     ICategoryRepository _categoryRepository) 
     : INewsService
 {
+    public async Task<Result<PaginatedData<NewsResponse>>> GetPaginatedNewsNotPublishedAsync(int pageNumber, int pageSize, string? searchTerms, string? sortColumn,
+        string? sortOrder)
+    {
+        var (newsEntities, totalCount) = await _newsRepository.GetPaginatedNewsNotPublishedAsync(
+            pageNumber, pageSize, searchTerms, sortColumn, sortOrder);
+        var newsResponse = newsEntities.Select(newsEntity =>
+            new NewsResponse(
+                ID: newsEntity.ID.ToString(),
+                Category: newsEntity.Category.Name,
+                AuthorProfilePictureUrl: newsEntity.User.ProfilePictureUrl,
+                AuthorLastName: newsEntity.User.LastName,
+                AuthorFirstName: newsEntity.User.FirstName,
+                AuthorMiddleName: newsEntity.User.MiddleName,
+                ImageTitleUrl: newsEntity.ImageTitleUrl,
+                Title: newsEntity.Title,
+                Content: newsEntity.Content,
+                ViewsCount: newsEntity.Views.Count,
+                LikesCount: newsEntity.Likes.Count,
+                CommentsCount: newsEntity.Comments.Count,
+                IsViewed: false,
+                IsLiked: false,
+                IsBookMarked: false,
+                Created: newsEntity.Created)).ToList();
+        var paginatedNewsResponse = new PaginatedData<NewsResponse>(
+            List: newsResponse, TotalCount: totalCount);
+        return Result<PaginatedData<NewsResponse>>
+            .Success(paginatedNewsResponse, "Новости успешно получены.");
+    }
+
     public async Task<Result<PaginatedData<NewsResponse>>> GetPaginatedNewsAsync(
         int pageNumber, int pageSize,
         string searchTerms, string sortColumn, string sortOrder)
@@ -322,7 +351,7 @@ public class NewsService(
             newsEntity.ImageTitleUrl = _uploadFile.Upload(request.ImageTitleUploadRequest);
         await _newsRepository.CreateAsync(newsEntity);
         return Result<string>
-            .Success("Новость успешно опубликованна.");
+            .Success("Новость успешно отправленна на премодерацию.");
     }
 
     public async Task<Result> UpdateAsync(string newsId, UpdateNewsRequest request)
@@ -354,7 +383,7 @@ public class NewsService(
                 .Fail("Новость с таким же названием уже существует!");
         }
         
-        var categoryEntity = _categoryRepository
+        var categoryEntity = await _categoryRepository
             .GetByIdAsync(request.CategoryId);
         if (categoryEntity == null)
         {
@@ -396,5 +425,24 @@ public class NewsService(
         await _newsRepository.DeleteAsync(newsEntity);
         return Result<string>
             .Success("Новость успешно удалена.");
+    }
+
+    public async Task<Result> AcceptOrDeclineNewsRequestAsync(string newsId, AcceptOrDeclineNewsRequest request)
+    {
+        var newsEntity = await _newsRepository.GetByIdAsync(Guid.Parse(newsId));
+        if (newsEntity == null)
+        {
+            return Result<string>
+                .Fail("Новость с данным идентификатором не существует!");
+        }
+
+        if (!request.IsAccept)
+        {
+            await _newsRepository.DeleteAsync(newsEntity);
+            return Result<string>.Success("Новость успешно отклонена, и будет удалена.");
+        }
+        newsEntity.IsPublished = request.IsAccept;
+        await _newsRepository.UpdateAsync(newsEntity);
+        return Result<string>.Success("Новость успешно одобрена, и теперь она будет видна пользователям.");
     }
 }

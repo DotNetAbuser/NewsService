@@ -4,6 +4,15 @@ public static class NewsRoutes
 {
     private const string baseUrl = "api/news"; 
     
+    public static string GetPaginatedNewsNotPublished(int pageNumber, int pageSize,
+        string? searchTerms, string? sortColumn, string? sortOrder) =>
+        baseUrl + "/not-published" +
+        $"?pageNumber={pageNumber}" +
+        $"&pageSize={pageSize}" +
+        $"&searchTerms={searchTerms}" +
+        $"&sortColumn={sortColumn}" +
+        $"&sortOrder={sortOrder}";
+    
     public static string GetPaginatedNews(int pageNumber, int pageSize,
         string? searchTerms, string? sortColumn, string? sortOrder) =>
         baseUrl +
@@ -78,4 +87,7 @@ public static class NewsRoutes
             $"&searchTerms={searchTerms}" +
             $"&sortColumn={sortColumn}" +
             $"&sortOrder={sortOrder}";
+
+    public static string? AcceptOrDeclineNews(string newsId) =>
+        baseUrl + $"/{newsId}/accept-or-decline";
 }

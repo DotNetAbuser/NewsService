@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m5vSnvn2k+wh1o70ugWMzMrcj10A+NZwsB8GHi8BlYOyBglurJlHKyW3Z4Jn7S1fiupLPYgfK6KVNKvtx4X9vQ==",
+  "dgSpecHash": "9EWKekuyaS8NUvrcH2Ua3RxWskvNfn9tO8Qc8Mc2u1SaqG5oRlvkzmsrkDRnnj0azS6KPku3nkLSZCYp27B8/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Backend\\Src\\Server\\Server.csproj",
+  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Backend\\Src\\Server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyao\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\ilyao\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

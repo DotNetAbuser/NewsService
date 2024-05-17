@@ -174,7 +174,7 @@ public partial class NewsListVM(
         {
             { "NewsId" , newsId }
         });
-    
+
     [RelayCommand]
     private async Task GetNextDataAsync()
     {
@@ -182,17 +182,18 @@ public partial class NewsListVM(
         {
             IsFooterLoading = true;
             pageNumber += 1;
-            var result = await _newsManager.GetPaginatedNewsAsync(
-                pageNumber, pageSize, null, null, null);
-            if (!result.Succeeded)
-            {
-                foreach (var message in result.Messages)
-                    await _alertService.ShowAlertAsync(AlertType.Error, message);
-                return;
-            }
-            foreach (var news in result.Data.List)
-                NewsList.Add(news);
-            totalCount = result.Data.TotalCount;
+            
+            if (!string.IsNullOrWhiteSpace(SearchTerms))
+                await GetNextDataBySearchTermsAsync();
+            else if (CategoryId != 0)
+                await GetNextDataByCategoryIdAsync();
+            else if (IsMyViews)
+                await GetNextDataViewsByUserIdAsync();
+            else if (IsMyLikes)
+                await GetNextDataLikesByUserIdAsync();
+            else if (IsMyBookMarks)
+                await GetNextDataBookMarksByUserIdAsync();
+            
             IsCanGetNextData = NewsList.Count < totalCount;
         }
         catch (Exception ex)
@@ -203,5 +204,86 @@ public partial class NewsListVM(
         {
             IsFooterLoading = false;
         }
+    }
+
+    private async Task GetNextDataBookMarksByUserIdAsync()
+    {
+        var token = await _tokenManager.GetJwtAsync();
+        var userId = await _tokenManager.GetUserIdAsync(token);
+        var result = await _newsManager.GetPaginatedBookMarksNewsByUserIdAsync(
+            userId, pageNumber, pageSize, null, null, null);
+        if (!result.Succeeded)
+        {
+            foreach (var message in result.Messages)
+                await _alertService.ShowAlertAsync(AlertType.Error, message);
+            return;
+        }
+        foreach (var news in result.Data.List)
+            NewsList.Add(news);
+        totalCount = result.Data.TotalCount;
+    }
+
+    private async Task GetNextDataLikesByUserIdAsync()
+    {
+        var token = await _tokenManager.GetJwtAsync();
+        var userId = await _tokenManager.GetUserIdAsync(token);
+        var result = await _newsManager.GetPaginatedLikesNewsByUserIdAsync(
+            userId, pageNumber, pageSize, null, null, null);
+        if (!result.Succeeded)
+        {
+            foreach (var message in result.Messages)
+                await _alertService.ShowAlertAsync(AlertType.Error, message);
+            return;
+        }
+        foreach (var news in result.Data.List)
+            NewsList.Add(news);
+        totalCount = result.Data.TotalCount;
+    }
+
+    private async Task GetNextDataViewsByUserIdAsync()
+    {
+        var token = await _tokenManager.GetJwtAsync();
+        var userId = await _tokenManager.GetUserIdAsync(token);
+        var result = await _newsManager.GetPaginatedViewsNewsByUserIdAsync(
+            userId, pageNumber, pageSize, null, null, null);
+        if (!result.Succeeded)
+        {
+            foreach (var message in result.Messages)
+                await _alertService.ShowAlertAsync(AlertType.Error, message);
+            return;
+        }
+        foreach (var news in result.Data.List)
+            NewsList.Add(news);
+        totalCount = result.Data.TotalCount;
+    }
+
+    private async Task GetNextDataBySearchTermsAsync()
+    {
+        var result = await _newsManager.GetPaginatedNewsAsync(
+            pageNumber, pageSize, SearchTerms, null, null);
+        if (!result.Succeeded)
+        {
+            foreach (var message in result.Messages)
+                await _alertService.ShowAlertAsync(AlertType.Error, message);
+            return;
+        }
+        foreach (var news in result.Data.List)
+            NewsList.Add(news);
+        totalCount = result.Data.TotalCount;
+    }
+    
+    private async Task GetNextDataByCategoryIdAsync()
+    {
+        var result = await _newsManager.GetPaginatedNewsByCategoryAsync(
+            CategoryId, pageNumber, pageSize, null, null, null);
+        if (!result.Succeeded)
+        {
+            foreach (var message in result.Messages)
+                await _alertService.ShowAlertAsync(AlertType.Error, message);
+            return;
+        }
+        foreach (var news in result.Data.List)
+            NewsList.Add(news);
+        totalCount = result.Data.TotalCount;
     }
 }

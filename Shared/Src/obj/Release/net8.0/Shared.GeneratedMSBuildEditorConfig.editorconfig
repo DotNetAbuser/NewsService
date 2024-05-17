@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Shared
-build_property.ProjectDir = C:\Users\ilyao\Desktop\Projects\NewsService1\Shared\Src\
+build_property.ProjectDir = C:\Users\ilyao\Desktop\Projects\NewsService\Shared\Src\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

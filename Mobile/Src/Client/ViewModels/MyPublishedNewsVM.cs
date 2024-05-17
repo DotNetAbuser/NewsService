@@ -47,6 +47,29 @@ public partial class MyPublishedNewsVM(
     [ObservableProperty] private bool isFooterLoading;
 
     [RelayCommand]
+    private async Task DeleteNewsAsync(string newsId)
+    {
+        try
+        {
+            var result = await _newsManager.DeleteAsync(newsId);
+            if (!result.Succeeded)
+            {
+                foreach (var message in result.Messages)
+                    await _alertService.ShowAlertAsync(AlertType.Error, message);
+                return;
+            }
+            foreach (var message in result.Messages)
+                await _alertService.ShowAlertAsync(AlertType.Error, message);
+            IsBusy = true;
+        }
+        catch (Exception ex)
+        {
+            await _alertService.ShowAlertAsync(AlertType.Exception, ex.Message);
+        }
+     
+    }
+    
+    [RelayCommand]
     private async Task GoToNewsDetailsViewAsync(string newsId) =>
         await _navigationService.NavigateToAsync(nameof(NewsDetailsView), new Dictionary<string, object>
         {

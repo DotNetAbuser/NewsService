@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e1lD7G1P+HBCON0bAltWbv9I8A45Fm80a3sm3jKQPuwt4CyvAwIg78u4oefWsriCF5vX3zcsoU4bKYfsWBcL9A==",
+  "dgSpecHash": "JV81cgsNCowpX8x7LzXACnNZNkNmsWlRNqn+K9v7A+0DsCIDtQFXDunmsmCRWoWr0v8BzAzmXnVp21llrhD3kA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService1\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\ilyao\\Desktop\\Projects\\NewsService\\Mobile\\Src\\Client.Infrastructure\\Client.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilyao\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\ilyao\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",

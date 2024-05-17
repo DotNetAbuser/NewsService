@@ -12,6 +12,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Client.Infrastructure
-build_property.ProjectDir = C:\Users\ilyao\Desktop\Projects\NewsService1\Mobile\Src\Client.Infrastructure\
+build_property.ProjectDir = C:\Users\ilyao\Desktop\Projects\NewsService\Mobile\Src\Client.Infrastructure\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
