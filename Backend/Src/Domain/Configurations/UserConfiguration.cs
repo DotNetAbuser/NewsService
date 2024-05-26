@@ -70,20 +70,6 @@ public class UserConfiguration
             new()
             {
                 ID = Guid.NewGuid(),
-                RoleId = (int)Role.Journalist,
-                LastName = "Фатхудинов",
-                FirstName = "Артур",
-                MiddleName = "Рустамович",
-                Username = "artur_journalist",
-                PasswordHash = BCrypt.Net.BCrypt.EnhancedHashPassword("12032003"),
-                Email = "journalist@example.com",
-                Phone = "+79177793608",
-                IsActive = true,
-                Created = DateTime.UtcNow
-            },
-            new()
-            {
-                ID = Guid.NewGuid(),
                 RoleId = (int)Role.Guest,
                 LastName = "Фатхудинов",
                 FirstName = "Артур",

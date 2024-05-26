@@ -1,6 +1,4 @@
-﻿using Client.Infrastructure.Enums;
-
-namespace Client.ViewModels;
+﻿namespace Client.ViewModels;
 
 public class StartUpVM(
     IAlertService _alertService,
@@ -30,9 +28,6 @@ public class StartUpVM(
             {
                 case "Guest":
                     await _navigationService.NavigateToAsync($"//HomeGuest");
-                    break;
-                case "Journalist":
-                    await _navigationService.NavigateToAsync($"//HomeJournalist");
                     break;
                 case "Redactor":
                     await _navigationService.NavigateToAsync($"//HomeRedactor");

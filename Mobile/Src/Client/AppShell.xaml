@@ -18,15 +18,6 @@
         <Tab Icon="home.svg" Title="Главная">
             <ShellContent ContentTemplate="{DataTemplate views:HomeView}" Route="HomeGuest" />
         </Tab>
-        <Tab Icon="profile.svg" Title="Профиль">
-            <ShellContent ContentTemplate="{DataTemplate views:ProfileView}" />
-        </Tab>
-    </TabBar>
-
-    <TabBar>
-        <Tab Icon="home.svg" Title="Главная">
-            <ShellContent ContentTemplate="{DataTemplate views:HomeView}" Route="HomeJournalist" />
-        </Tab>
         <Tab Icon="news.svg" Title="Публикации">
             <ShellContent ContentTemplate="{DataTemplate views:MyPublishedNewsView}" />
         </Tab>

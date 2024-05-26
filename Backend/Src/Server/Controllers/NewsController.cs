@@ -112,7 +112,7 @@ public class NewsController(
     
 
     [HttpPost]
-    [Authorize(Roles = "Admin, Journalist")]
+    [Authorize(Roles = "Admin, Guest")]
     public async Task<IActionResult> CreateAsync(CreateNewsRequest request)
     {
         var response = await _newsService.CreateAsync(request);
@@ -120,14 +120,14 @@ public class NewsController(
     }
     
     [HttpPut("{newsId}")]
-    [Authorize(Roles = "Admin, Journalist")]
+    [Authorize(Roles = "Admin, Guest")]
     public async Task<IActionResult> UpdateAsync(string newsId, UpdateNewsRequest request)
     {
         return Ok(await _newsService.UpdateAsync(newsId, request));
     }
 
     [HttpDelete("{newsId}")]
-    [Authorize(Roles = "Admin, Journalist")]
+    [Authorize(Roles = "Admin, Guest")]
     public async Task<IActionResult> DeleteAsync(string newsId)
     {
         return Ok(await _newsService.DeleteAsync(newsId));

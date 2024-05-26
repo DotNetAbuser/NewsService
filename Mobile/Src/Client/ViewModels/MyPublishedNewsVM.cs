@@ -59,7 +59,7 @@ public partial class MyPublishedNewsVM(
                 return;
             }
             foreach (var message in result.Messages)
-                await _alertService.ShowAlertAsync(AlertType.Error, message);
+                await _alertService.ShowAlertAsync(AlertType.Success, message);
             IsBusy = true;
         }
         catch (Exception ex)

@@ -74,7 +74,62 @@
         <member name="P:Client.ViewModels.HomeVM.GoToNewsByCategoryCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.HomeVM.GoToNewsByCategoryAsync(Shared.Contracts.Responses.News.CategoryResponse)"/>.</summary>
         </member>
+        <member name="T:Client.ViewModels.ModerateNewsVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.SearchTerms">
+            <inheritdoc cref="F:Client.ViewModels.ModerateNewsVM.searchTerms"/>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.IsFooterLoading">
+            <inheritdoc cref="F:Client.ViewModels.ModerateNewsVM.isFooterLoading"/>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.IsCanGetNextData">
+            <inheritdoc cref="F:Client.ViewModels.ModerateNewsVM.isCanGetNextData"/>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.goToNewsDetailsViewCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.GoToNewsDetailsViewCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.GoToNewsDetailsViewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.GoToNewsDetailsViewAsync(System.String)"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.acceptNewsCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.AcceptNewsCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.AcceptNewsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.AcceptNewsAsync(System.String)"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.declineNewsCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.DeclineNewsCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.DeclineNewsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.DeclineNewsAsync(System.String)"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.searchCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.SearchCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.SearchCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.SearchAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.refreshDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.RefreshDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.RefreshDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.RefreshDataAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.getNextDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.GetNextDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.GetNextDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.GetNextDataAsync"/>.</summary>
+        </member>
         <member name="T:Client.ViewModels.MyPublishedNewsVM">
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
@@ -90,6 +145,12 @@
         </member>
         <member name="P:Client.ViewModels.MyPublishedNewsVM.IsFooterLoading">
             <inheritdoc cref="F:Client.ViewModels.MyPublishedNewsVM.isFooterLoading"/>
+        </member>
+        <member name="F:Client.ViewModels.MyPublishedNewsVM.deleteNewsCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.MyPublishedNewsVM.DeleteNewsCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.MyPublishedNewsVM.DeleteNewsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.MyPublishedNewsVM.DeleteNewsAsync(System.String)"/>.</summary>
         </member>
         <member name="F:Client.ViewModels.MyPublishedNewsVM.goToNewsDetailsViewCommand">
             <summary>The backing field for <see cref="P:Client.ViewModels.MyPublishedNewsVM.GoToNewsDetailsViewCommand"/>.</summary>
