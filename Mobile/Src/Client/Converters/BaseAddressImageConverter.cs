@@ -9,7 +9,7 @@ public class BaseAddressImageConverter : IValueConverter
         var serverFilePath = value.ToString();
         if (string.IsNullOrWhiteSpace(serverFilePath))
             return string.Empty;
-        var uri = ApplicationConstants.BaseAddress + serverFilePath;
+        var uri = ApplicationConstants.BackendAddress + serverFilePath;
         return uri;
     }
 

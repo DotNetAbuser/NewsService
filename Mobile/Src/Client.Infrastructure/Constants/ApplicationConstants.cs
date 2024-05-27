@@ -3,5 +3,5 @@
 public static class ApplicationConstants
 {
     public static string BaseClient = "BaseClient";
-    public static string BaseAddress = "http://10.0.2.2:5005/";
+    public static string BackendAddress = "http://194.67.67.140:6001/";
 }

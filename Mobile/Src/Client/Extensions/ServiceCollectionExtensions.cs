@@ -37,7 +37,7 @@ internal static class ServiceCollectionExtensions
         services
             .AddTransient<AuthorizationHeaderHandler>()
             .AddHttpClient(ApplicationConstants.BaseClient)
-            .ConfigureHttpClient(client => client.BaseAddress = new Uri(ApplicationConstants.BaseAddress))
+            .ConfigureHttpClient(client => client.BaseAddress = new Uri(ApplicationConstants.BackendAddress))
             .AddHttpMessageHandler<AuthorizationHeaderHandler>();
     }
 }
