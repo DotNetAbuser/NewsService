@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.HttpOverrides;
+
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
@@ -22,10 +24,18 @@ builder.Services.AddServices();
 
 builder.Services.AddControllers();
 
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+});
+
 var app = builder.Build();
 
 #if DEBUG
 app.AddSwagger();
+#else
+app.UseForwardedHeaders();
 #endif
 
 app.UseStaticFiles(new StaticFileOptions
