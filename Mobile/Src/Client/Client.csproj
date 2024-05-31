@@ -10,7 +10,7 @@
         <Nullable>enable</Nullable>
 
         <!-- Display name -->
-        <ApplicationTitle>NewsService</ApplicationTitle>
+        <ApplicationTitle>РУССМИ - новостное приложение</ApplicationTitle>
 
         <!-- App Identifier -->
         <ApplicationId>com.companyname.client</ApplicationId>
