@@ -20,12 +20,12 @@
             <Label
                 FontAttributes="Bold"
                 FontSize="28"
-                Text="News"
+                Text="РУС"
                 TextColor="{StaticResource Primary}" />
             <Label
                 FontAttributes="Bold"
                 FontSize="28"
-                Text="Service" />
+                Text="СМИ" />
         </HorizontalStackLayout>
     </Shell.TitleView>
     <ContentPage.Behaviors>

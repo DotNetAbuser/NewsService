@@ -24,12 +24,12 @@
                     <Label
                         FontAttributes="Bold"
                         FontSize="44"
-                        Text="News"
+                        Text="РУС"
                         TextColor="{StaticResource Primary}" />
                     <Label
                         FontAttributes="Bold"
                         FontSize="44"
-                        Text="Service" />
+                        Text="СМИ" />
                 </HorizontalStackLayout>
                 <ActivityIndicator IsRunning="True" />
             </VerticalStackLayout>

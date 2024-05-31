@@ -1,0 +1,921 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Client</name>
+    </assembly>
+    <members>
+        <member name="T:Client.ViewModels.Base.BaseVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.Base.BaseVM.IsBusy">
+            <inheritdoc cref="F:Client.ViewModels.Base.BaseVM.isBusy"/>
+        </member>
+        <member name="F:Client.ViewModels.Base.BaseVM.disappearingViewCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.Base.BaseVM.DisappearingViewCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.Base.BaseVM.DisappearingViewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.Base.BaseVM.DisappearingView"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.Base.BaseVM.appearingViewCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.Base.BaseVM.AppearingViewCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.Base.BaseVM.AppearingViewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.Base.BaseVM.AppearingView"/>.</summary>
+        </member>
+        <member name="T:Client.ViewModels.HomeVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.HomeVM.SearchTerms">
+            <inheritdoc cref="F:Client.ViewModels.HomeVM.searchTerms"/>
+        </member>
+        <member name="P:Client.ViewModels.HomeVM.CategoryList">
+            <inheritdoc cref="F:Client.ViewModels.HomeVM.categoryList"/>
+        </member>
+        <member name="P:Client.ViewModels.HomeVM.IsFooterLoading">
+            <inheritdoc cref="F:Client.ViewModels.HomeVM.isFooterLoading"/>
+        </member>
+        <member name="P:Client.ViewModels.HomeVM.IsCanGetNextData">
+            <inheritdoc cref="F:Client.ViewModels.HomeVM.isCanGetNextData"/>
+        </member>
+        <member name="F:Client.ViewModels.HomeVM.refreshDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.HomeVM.RefreshDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.HomeVM.RefreshDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.HomeVM.RefreshDataAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.HomeVM.searchCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.HomeVM.SearchCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.HomeVM.SearchCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.HomeVM.SearchAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.HomeVM.getNextDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.HomeVM.GetNextDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.HomeVM.GetNextDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.HomeVM.GetNextDataAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.HomeVM.goToNewsDetailsViewCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.HomeVM.GoToNewsDetailsViewCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.HomeVM.GoToNewsDetailsViewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.HomeVM.GoToNewsDetailsViewAsync(System.String)"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.HomeVM.goToNewsByCategoryCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.HomeVM.GoToNewsByCategoryCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.HomeVM.GoToNewsByCategoryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.HomeVM.GoToNewsByCategoryAsync(Shared.Contracts.Responses.News.CategoryResponse)"/>.</summary>
+        </member>
+        <member name="T:Client.ViewModels.ModerateNewsVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.SearchTerms">
+            <inheritdoc cref="F:Client.ViewModels.ModerateNewsVM.searchTerms"/>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.IsFooterLoading">
+            <inheritdoc cref="F:Client.ViewModels.ModerateNewsVM.isFooterLoading"/>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.IsCanGetNextData">
+            <inheritdoc cref="F:Client.ViewModels.ModerateNewsVM.isCanGetNextData"/>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.goToNewsDetailsViewCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.GoToNewsDetailsViewCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.GoToNewsDetailsViewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.GoToNewsDetailsViewAsync(System.String)"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.acceptNewsCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.AcceptNewsCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.AcceptNewsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.AcceptNewsAsync(System.String)"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.declineNewsCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.DeclineNewsCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.DeclineNewsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.DeclineNewsAsync(System.String)"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.searchCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.SearchCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.SearchCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.SearchAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.refreshDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.RefreshDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.RefreshDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.RefreshDataAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ModerateNewsVM.getNextDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ModerateNewsVM.GetNextDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ModerateNewsVM.GetNextDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ModerateNewsVM.GetNextDataAsync"/>.</summary>
+        </member>
+        <member name="T:Client.ViewModels.MyPublishedNewsVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.MyPublishedNewsVM.SearchTerms">
+            <inheritdoc cref="F:Client.ViewModels.MyPublishedNewsVM.searchTerms"/>
+        </member>
+        <member name="P:Client.ViewModels.MyPublishedNewsVM.IsCanGetNextData">
+            <inheritdoc cref="F:Client.ViewModels.MyPublishedNewsVM.isCanGetNextData"/>
+        </member>
+        <member name="P:Client.ViewModels.MyPublishedNewsVM.IsFooterLoading">
+            <inheritdoc cref="F:Client.ViewModels.MyPublishedNewsVM.isFooterLoading"/>
+        </member>
+        <member name="F:Client.ViewModels.MyPublishedNewsVM.deleteNewsCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.MyPublishedNewsVM.DeleteNewsCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.MyPublishedNewsVM.DeleteNewsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.MyPublishedNewsVM.DeleteNewsAsync(System.String)"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.MyPublishedNewsVM.goToNewsDetailsViewCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.MyPublishedNewsVM.GoToNewsDetailsViewCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.MyPublishedNewsVM.GoToNewsDetailsViewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.MyPublishedNewsVM.GoToNewsDetailsViewAsync(System.String)"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.MyPublishedNewsVM.goToPublishNewsViewCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.MyPublishedNewsVM.GoToPublishNewsViewCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.MyPublishedNewsVM.GoToPublishNewsViewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.MyPublishedNewsVM.GoToPublishNewsViewAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.MyPublishedNewsVM.searchAsyncCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.MyPublishedNewsVM.SearchAsyncCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.MyPublishedNewsVM.SearchAsyncCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.MyPublishedNewsVM.SearchAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.MyPublishedNewsVM.refreshDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.MyPublishedNewsVM.RefreshDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.MyPublishedNewsVM.RefreshDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.MyPublishedNewsVM.RefreshDataAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.MyPublishedNewsVM.getNextDataNewsCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.MyPublishedNewsVM.GetNextDataNewsCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.MyPublishedNewsVM.GetNextDataNewsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.MyPublishedNewsVM.GetNextDataNewsAsync"/>.</summary>
+        </member>
+        <member name="T:Client.ViewModels.NewsDetailsVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.NewsId">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.newsId"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.Category">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.category"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.AuthorProfilePictureUrl">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.authorProfilePictureUrl"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.AuthorLastName">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.authorLastName"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.AuthorFirstName">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.authorFirstName"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.AuthorMiddleName">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.authorMiddleName"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.ImageTitleUrl">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.imageTitleUrl"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.Title">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.title"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.Content">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.content"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.ViewsCount">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.viewsCount"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.LikesCount">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.likesCount"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.CommentsCount">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.commentsCount"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.IsViewed">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.isViewed"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.IsLiked">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.isLiked"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.IsBookMarked">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.isBookMarked"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.Created">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.created"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.TotalCount">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.totalCount"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.IsCanGetNextCommentsData">
+            <inheritdoc cref="F:Client.ViewModels.NewsDetailsVM.isCanGetNextCommentsData"/>
+        </member>
+        <member name="F:Client.ViewModels.NewsDetailsVM.refreshDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.NewsDetailsVM.RefreshDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.RefreshDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.NewsDetailsVM.RefreshDataAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.NewsDetailsVM.likeChangeStateCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.NewsDetailsVM.LikeChangeStateCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.LikeChangeStateCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.NewsDetailsVM.LikeChangeStateAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.NewsDetailsVM.bookMarkChangeStateCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.NewsDetailsVM.BookMarkChangeStateCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.BookMarkChangeStateCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.NewsDetailsVM.BookMarkChangeStateAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.NewsDetailsVM.getNextDataCommentsCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.NewsDetailsVM.GetNextDataCommentsCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.NewsDetailsVM.GetNextDataCommentsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.NewsDetailsVM.GetNextDataCommentsAsync"/>.</summary>
+        </member>
+        <member name="T:Client.ViewModels.NewsListVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.PageTitle">
+            <inheritdoc cref="F:Client.ViewModels.NewsListVM.pageTitle"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.SearchTerms">
+            <inheritdoc cref="F:Client.ViewModels.NewsListVM.searchTerms"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.CategoryId">
+            <inheritdoc cref="F:Client.ViewModels.NewsListVM.categoryId"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.CategoryName">
+            <inheritdoc cref="F:Client.ViewModels.NewsListVM.categoryName"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.IsMyViews">
+            <inheritdoc cref="F:Client.ViewModels.NewsListVM.isMyViews"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.IsMyLikes">
+            <inheritdoc cref="F:Client.ViewModels.NewsListVM.isMyLikes"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.IsMyBookMarks">
+            <inheritdoc cref="F:Client.ViewModels.NewsListVM.isMyBookMarks"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.IsFooterLoading">
+            <inheritdoc cref="F:Client.ViewModels.NewsListVM.isFooterLoading"/>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.IsCanGetNextData">
+            <inheritdoc cref="F:Client.ViewModels.NewsListVM.isCanGetNextData"/>
+        </member>
+        <member name="F:Client.ViewModels.NewsListVM.refreshDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.NewsListVM.RefreshDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.RefreshDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.NewsListVM.RefreshDataAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.NewsListVM.goToNewsDetailsViewCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.NewsListVM.GoToNewsDetailsViewCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.GoToNewsDetailsViewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Client.ViewModels.NewsListVM.GoToNewsDetailsView(System.String)"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.NewsListVM.getNextDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.NewsListVM.GetNextDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.NewsListVM.GetNextDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.NewsListVM.GetNextDataAsync"/>.</summary>
+        </member>
+        <member name="T:Client.ViewModels.ProfileVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.ProfilePictureUrl">
+            <inheritdoc cref="F:Client.ViewModels.ProfileVM.profilePictureUrl"/>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.LastName">
+            <inheritdoc cref="F:Client.ViewModels.ProfileVM.lastName"/>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.FirstName">
+            <inheritdoc cref="F:Client.ViewModels.ProfileVM.firstName"/>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.MiddleName">
+            <inheritdoc cref="F:Client.ViewModels.ProfileVM.middleName"/>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.Username">
+            <inheritdoc cref="F:Client.ViewModels.ProfileVM.username"/>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.Email">
+            <inheritdoc cref="F:Client.ViewModels.ProfileVM.email"/>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.Phone">
+            <inheritdoc cref="F:Client.ViewModels.ProfileVM.phone"/>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.IsActive">
+            <inheritdoc cref="F:Client.ViewModels.ProfileVM.isActive"/>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.Created">
+            <inheritdoc cref="F:Client.ViewModels.ProfileVM.created"/>
+        </member>
+        <member name="F:Client.ViewModels.ProfileVM.refreshDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ProfileVM.RefreshDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.RefreshDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ProfileVM.RefreshDataAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ProfileVM.goToNewsListViewByViewsCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ProfileVM.GoToNewsListViewByViewsCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.GoToNewsListViewByViewsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ProfileVM.GoToNewsListViewByViewsAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ProfileVM.goToNewsListViewByLikesCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ProfileVM.GoToNewsListViewByLikesCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.GoToNewsListViewByLikesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ProfileVM.GoToNewsListViewByLikesAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ProfileVM.goToNewsListViewByBookMarksCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ProfileVM.GoToNewsListViewByBookMarksCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.GoToNewsListViewByBookMarksCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ProfileVM.GoToNewsListViewByBookMarksAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.ProfileVM.signOutCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.ProfileVM.SignOutCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.ProfileVM.SignOutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.ProfileVM.SignOutAsync"/>.</summary>
+        </member>
+        <member name="T:Client.ViewModels.PublishNewsVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.PublishNewsVM.ImageName">
+            <inheritdoc cref="F:Client.ViewModels.PublishNewsVM.imageName"/>
+        </member>
+        <member name="P:Client.ViewModels.PublishNewsVM.ImageFilePath">
+            <inheritdoc cref="F:Client.ViewModels.PublishNewsVM.imageFilePath"/>
+        </member>
+        <member name="P:Client.ViewModels.PublishNewsVM.Title">
+            <inheritdoc cref="F:Client.ViewModels.PublishNewsVM.title"/>
+        </member>
+        <member name="P:Client.ViewModels.PublishNewsVM.Content">
+            <inheritdoc cref="F:Client.ViewModels.PublishNewsVM.content"/>
+        </member>
+        <member name="P:Client.ViewModels.PublishNewsVM.CategoryList">
+            <inheritdoc cref="F:Client.ViewModels.PublishNewsVM.categoryList"/>
+        </member>
+        <member name="P:Client.ViewModels.PublishNewsVM.SelectedCategory">
+            <inheritdoc cref="F:Client.ViewModels.PublishNewsVM.selectedCategory"/>
+        </member>
+        <member name="F:Client.ViewModels.PublishNewsVM.loadDataCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.PublishNewsVM.LoadDataCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.PublishNewsVM.LoadDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.PublishNewsVM.LoadDataAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.PublishNewsVM.importImageNewsFilePathCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.PublishNewsVM.ImportImageNewsFilePathCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.PublishNewsVM.ImportImageNewsFilePathCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.PublishNewsVM.ImportImageNewsFilePathAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.PublishNewsVM.clearImageNewsFilePathCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.PublishNewsVM.ClearImageNewsFilePathCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.PublishNewsVM.ClearImageNewsFilePathCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.PublishNewsVM.ClearImageNewsFilePathAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.PublishNewsVM.publishNewsCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.PublishNewsVM.PublishNewsCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.PublishNewsVM.PublishNewsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.PublishNewsVM.PublishNewsAsync"/>.</summary>
+        </member>
+        <member name="T:Client.ViewModels.SignInVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.SignInVM.Username">
+            <inheritdoc cref="F:Client.ViewModels.SignInVM.username"/>
+        </member>
+        <member name="P:Client.ViewModels.SignInVM.Password">
+            <inheritdoc cref="F:Client.ViewModels.SignInVM.password"/>
+        </member>
+        <member name="P:Client.ViewModels.SignInVM.IsUsernameValid">
+            <inheritdoc cref="F:Client.ViewModels.SignInVM.isUsernameValid"/>
+        </member>
+        <member name="P:Client.ViewModels.SignInVM.IsPasswordValid">
+            <inheritdoc cref="F:Client.ViewModels.SignInVM.isPasswordValid"/>
+        </member>
+        <member name="P:Client.ViewModels.SignInVM.IsPasswordNotVisible">
+            <inheritdoc cref="F:Client.ViewModels.SignInVM.isPasswordNotVisible"/>
+        </member>
+        <member name="F:Client.ViewModels.SignInVM.changeIsPasswordCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.SignInVM.ChangeIsPasswordCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.SignInVM.ChangeIsPasswordCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.SignInVM.ChangeIsPasswordAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.SignInVM.signInCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.SignInVM.SignInCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.SignInVM.SignInCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.SignInVM.SignInAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.SignInVM.goToSignUpViewCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.SignInVM.GoToSignUpViewCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.SignInVM.GoToSignUpViewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.SignInVM.GoToSignUpViewAsync"/>.</summary>
+        </member>
+        <member name="T:Client.ViewModels.SignUpVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.LastName">
+            <inheritdoc cref="F:Client.ViewModels.SignUpVM.lastName"/>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.FirstName">
+            <inheritdoc cref="F:Client.ViewModels.SignUpVM.firstName"/>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.MiddleName">
+            <inheritdoc cref="F:Client.ViewModels.SignUpVM.middleName"/>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.Username">
+            <inheritdoc cref="F:Client.ViewModels.SignUpVM.username"/>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.Password">
+            <inheritdoc cref="F:Client.ViewModels.SignUpVM.password"/>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.ConfirmPassword">
+            <inheritdoc cref="F:Client.ViewModels.SignUpVM.confirmPassword"/>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.Email">
+            <inheritdoc cref="F:Client.ViewModels.SignUpVM.email"/>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.Phone">
+            <inheritdoc cref="F:Client.ViewModels.SignUpVM.phone"/>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.IsPasswordNotVisible">
+            <inheritdoc cref="F:Client.ViewModels.SignUpVM.isPasswordNotVisible"/>
+        </member>
+        <member name="F:Client.ViewModels.SignUpVM.changeIsPasswordCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.SignUpVM.ChangeIsPasswordCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.ChangeIsPasswordCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.SignUpVM.ChangeIsPasswordAsync"/>.</summary>
+        </member>
+        <member name="F:Client.ViewModels.SignUpVM.signUpCommand">
+            <summary>The backing field for <see cref="P:Client.ViewModels.SignUpVM.SignUpCommand"/>.</summary>
+        </member>
+        <member name="P:Client.ViewModels.SignUpVM.SignUpCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Client.ViewModels.SignUpVM.SignUpAsync"/>.</summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_InputView.TextColorTo(Microsoft.Maui.Controls.InputView,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SearchTerms">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SearchTerms" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoryList">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoryList" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsFooterLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsFooterLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsCanGetNextData">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsCanGetNextData" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NewsId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NewsId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Category">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Category" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.AuthorProfilePictureUrl">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "AuthorProfilePictureUrl" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.AuthorLastName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "AuthorLastName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.AuthorFirstName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "AuthorFirstName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.AuthorMiddleName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "AuthorMiddleName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ImageTitleUrl">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ImageTitleUrl" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Content">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Content" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ViewsCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ViewsCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LikesCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LikesCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CommentsCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CommentsCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsViewed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsViewed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLiked">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLiked" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBookMarked">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBookMarked" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Created">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Created" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsCanGetNextCommentsData">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsCanGetNextCommentsData" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PageTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PageTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoryId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoryId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoryName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoryName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsMyViews">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsMyViews" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsMyLikes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsMyLikes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsMyBookMarks">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsMyBookMarks" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProfilePictureUrl">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProfilePictureUrl" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LastName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LastName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FirstName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FirstName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MiddleName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MiddleName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Username">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Username" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Phone">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Phone" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsActive">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsActive" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ImageName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ImageName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ImageFilePath">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ImageFilePath" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedCategory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedCategory" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsUsernameValid">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsUsernameValid" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsPasswordValid">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsPasswordValid" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsPasswordNotVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsPasswordNotVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SearchTerms">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SearchTerms" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoryList">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoryList" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsFooterLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsFooterLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsCanGetNextData">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsCanGetNextData" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NewsId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NewsId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Category">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Category" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.AuthorProfilePictureUrl">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "AuthorProfilePictureUrl" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.AuthorLastName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "AuthorLastName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.AuthorFirstName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "AuthorFirstName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.AuthorMiddleName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "AuthorMiddleName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ImageTitleUrl">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ImageTitleUrl" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Content">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Content" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ViewsCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ViewsCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LikesCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LikesCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CommentsCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CommentsCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsViewed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsViewed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLiked">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLiked" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBookMarked">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBookMarked" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Created">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Created" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsCanGetNextCommentsData">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsCanGetNextCommentsData" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PageTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PageTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoryId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoryId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoryName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoryName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsMyViews">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsMyViews" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsMyLikes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsMyLikes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsMyBookMarks">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsMyBookMarks" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProfilePictureUrl">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProfilePictureUrl" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LastName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LastName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FirstName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FirstName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MiddleName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MiddleName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Username">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Username" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Phone">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Phone" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsActive">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsActive" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ImageName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ImageName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ImageFilePath">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ImageFilePath" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedCategory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedCategory" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsUsernameValid">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsUsernameValid" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsPasswordValid">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsPasswordValid" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsPasswordNotVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsPasswordNotVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConfirmPassword" generated properties.</summary>
+        </member>
+    </members>
+</doc>
