@@ -163,6 +163,28 @@
                         Grid.Row="2"
                         ItemTemplate="{StaticResource NewsCardTemplate}"
                         ItemsSource="{Binding NewsList}" />
+                    <Border
+                        Grid.Row="2"
+                        HeightRequest="200"
+                        StrokeShape="RoundRectangle 10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="24"
+                            HorizontalTextAlignment="Center"
+                            IsVisible="False"
+                            Text="Предложите свою первую новость! Нажмите на + в правом верхнем углу!"
+                            VerticalTextAlignment="Center">
+                            <Label.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding NewsList.Count}"
+                                    TargetType="Label"
+                                    Value="0">
+                                    <Setter Property="IsVisible" Value="True" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                    </Border>
+
 
                     <Button
                         Command="{Binding GetNextDataNewsCommand}"
